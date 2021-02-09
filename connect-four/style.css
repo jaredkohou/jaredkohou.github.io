@@ -13,4 +13,6 @@ body {
     background-color: rgb(155, 0, 0);
     color: white;
     display: flex;
+    width: 700px;
+    height: 700px;
 }
