@@ -13,6 +13,18 @@ body {
     background-color: rgb(155, 0, 0);
     color: white;
     display: flex;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
+    flex-wrap: wrap;
+}
+
+.boxes {
+    box-sizing: border-box;
+    border: yellow solid 1px;
+    width: 100px;
+    height: 100px;
+}
+
+button {
+    text-align: center;
 }
