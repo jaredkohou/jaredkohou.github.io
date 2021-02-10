@@ -18,18 +18,3 @@ body {
     flex-wrap: wrap;
 }
 
-.boxes {
-    box-sizing: border-box;
-    border: yellow solid 1px;
-    width: 100px;
-    height: 100px;
-}
-
-.boxes :hover{
-    background-color: teal;
-}
-
-button {
-    text-align: center;
-}
-
