@@ -11,6 +11,10 @@ body {
     align-items: center;
 }
 
+h1 {
+    text-align: center;
+}
+
 .container {
     width: 700px;
     height: 600px;
