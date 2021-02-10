@@ -10,11 +10,16 @@ body {
 }
 
 .grid-container {
-    background-color: rgb(155, 0, 0);
-    color: white;
-    display: flex;
-    width: 600px;
+    background-color: teal;
+    width: 700px;
     height: 600px;
-    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+}
+
+.cols {
+    width: 50px;
 }
 
