@@ -1,25 +1,30 @@
 * {
-    padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 body {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.grid-container {
-    background-color: teal;
+.container {
     width: 700px;
     height: 600px;
+    background-color: aqua;
 }
 
 .row {
     display: flex;
 }
 
-.cols {
-    width: 50px;
+.col {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    background-color: white;
+    margin: 5px;
 }
-
