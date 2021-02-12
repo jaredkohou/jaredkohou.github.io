@@ -19,7 +19,41 @@ class Grid {
             $(this.selector).append($r)
         }
     }
-
+    setupListners() {
+        const that = this
+        
+        function getEmptyCircle(col) {
+        const cellsArr = $(`.col[data-col='${col}']`);
+        for (let i = cellsArr.length - 1; i >= 0; i--) {
+        const $c = $(cellsArr[i])
+        if ($c.hasClass("empty")) {
+        return $c
+        }
+        }
+        return null
+        }
+        
+        $('.col.empty').on('click', function() {
+        if (that.isGameOver) return;
+        const col = $(this).data("col")
+        const lastEmptyCell = getEmptyCircle(col)
+        lastEmptyCell.removeClass("empty");
+        lastEmptyCell.addClass(that.turn)
+        lastEmptyCell.data('player', that.turn)
+        
+        const winner = that.checkForWinner(lastEmptyCell.data("row"), lastEmptyCell.data("col"))
+        console.log(winner)
+        if (winner) {
+        that.isGameOver = true;
+        alert(`Game over ${that.turn} won`)
+        $('.col.empty').removeClass('empty');
+        return;
+        }
+        
+        that.turn = (that.turn === "red") ? "black" : "red";
+        that.onPlayerMove();
+        })
+    }
 
 }
 

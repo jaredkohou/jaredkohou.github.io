@@ -2,37 +2,41 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-}
-
-body {
+    }
+    
+    body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-h1 {
-    text-align: center;
-}
-
-.container {
+    }
+    
+    .container {
     width: 700px;
     height: 600px;
     background-color: aqua;
-}
-
-.row {
+    }
+    
+    .row {
     display: flex;
-}
-
-.col {
+    }
+    
+    .col {
     width: 90px;
     height: 90px;
     border-radius: 100%;
     background-color: white;
     margin: 5px;
-}
-
-.faded__red {
-    background-color: rgba(255, 0, 0, .8);
-}
+    }
+    
+    .col.empty {
+    cursor: pointer;
+    }
+    
+    .red {
+    background-color: red;
+    }
+    
+    .black {
+    background-color: black;
+    }
