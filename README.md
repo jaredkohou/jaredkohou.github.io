@@ -1,2 +1,0 @@
-# jaredkohou.github.io
-Projects
