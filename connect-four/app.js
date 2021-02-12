@@ -54,6 +54,64 @@ class Grid {
         that.onPlayerMove();
         })
     }
+    checkForWinner(row, col) {
+        const that = this;
+
+        function $getCell(i, j) {
+            return $(`.col[data-row='${i}'][data-col='${j}']`);
+        }
+
+        function checkDirection(direction) {
+            let total = 0;
+            let i = row + direction.i;
+            let j = col + direction.j;
+            let $next = $getCell(i, j);
+            while (i >= 0 &&
+                i < that.rows &&
+                j >= 0 &&
+                j < that.cols &&
+                $next.data('player') === that.turn
+            ) {
+                total++;
+                i += direction.i;
+                j += direction.j;
+                $next = $getCell(i, j);
+            }
+            return total;
+        }
+
+        function checkWin(directionA, directionB) {
+            const total = 1 +
+                checkDirection(directionA) +
+                checkDirection(directionB);
+            if (total >= 4) {
+                return that.turn;
+            } else {
+                return null;
+            }
+        }
+
+        function checkDiagonalBLtoTR() {
+            return checkWin({ i: 1, j: -1 }, { i: 1, j: 1 });
+        }
+
+        function checkDiagonalTLtoBR() {
+            return checkWin({ i: 1, j: 1 }, { i: -1, j: -1 });
+        }
+
+        function checkVerticals() {
+            return checkWin({ i: -1, j: 0 }, { i: 1, j: 0 });
+        }
+
+        function checkHorizontals() {
+            return checkWin({ i: 0, j: -1 }, { i: 0, j: 1 });
+        }
+
+        return checkVerticals() ||
+            checkHorizontals() ||
+            checkDiagonalBLtoTR() ||
+            checkDiagonalTLtoBR();
+    }
 
 }
 
